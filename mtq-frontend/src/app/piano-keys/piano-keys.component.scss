@@ -1,0 +1,43 @@
+#wrap {
+    --w: 40px;
+    position: relative;
+    > #white-keys, > #black-keys {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    > #white-keys {
+        column-gap: calc(var(--w)*0.075);
+    }
+    > #black-keys {
+        column-gap: calc(var(--w)*0.475);
+    }
+    .key {
+        box-sizing: border-box;
+        border-radius: 0 0 calc(var(--w)*0.2) calc(var(--w)*0.2);
+    }
+    .key.white {
+        width: var(--w);
+        height: calc(var(--w)*4);
+        background-color: rgb(230, 237, 240);
+        border: calc(var(--w)*0.05) solid rgb(182, 185, 190);
+    }
+    .key.black {
+        width: calc(var(--w)*0.6);
+        height: calc(var(--w)*2.75);
+        background-color: rgb(60, 60, 61);
+        border: calc(var(--w)*0.05) solid rgb(33, 33, 34);
+    }
+    .key.black:first-child {
+        margin-left: calc( var(--w) * ((1 - 0.3) + (0.075 * 0.5)) );
+    }
+    .key.black.fs, .key.black.cs:not(:first-child) {
+        margin-left: calc(var(--w)*1.075);
+    }
+}
+#wrap.hoverable {
+    .key:hover {
+        background-color: rgb(103, 98, 175);
+    }
+}
