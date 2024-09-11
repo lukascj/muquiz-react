@@ -1,2 +1,4 @@
-npm run build
-npm start
+Music theory quiz app in React.
+
+Build: npm run build, 
+Run: npm start
