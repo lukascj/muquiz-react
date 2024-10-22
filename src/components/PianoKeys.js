@@ -1,6 +1,5 @@
-// "comp" for component
 import React, { Component } from 'react';
-import "./comp.PianoKeys.scss"
+import "./PianoKeys.scss"
 
 export default class PianoKeys extends Component {
   render() {

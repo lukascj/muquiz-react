@@ -31,6 +31,7 @@ module.exports = {
     }),
   ],
   devServer: {
+    historyApiFallback: true, // Sätter igång routing på klient-sidan.
     static: {
       directory: path.join(__dirname, 'dist'),
     },

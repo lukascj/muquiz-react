@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.playfair-display {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+.oswald {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+:root {
+    --c1: rgb(27, 29, 43);
+    --c1-light: rgb(34, 42, 70);
+    --c1-dark: rgb(21, 21, 31);
+    --c2: rgb(245, 195, 59);
+    --c2-dark: rgb(245, 99, 31);
+    --c2-dark-2: rgb(235, 65, 13);
+    --c-error: rgb(187, 56, 56);
+    --c-success: rgb(92, 155, 76);
+
+    --f1: "Playfair Display", serif;
+    --f2: "Oswald", sans-serif;
+
+    --w: 393px;
+    --h: 852px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--c1-dark);
+
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    > #wrap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+#window {
+    width: var(--w);
+    height: var(--h);
+    border: 1px solid var(--c2);
+    border-radius: 10px;
+    background-color: var(--c1);
+}
+#blocked {
+    display: none;
+}
+h1 {
+    font-family: var(--f1);
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--c2);
+}
+h3 {
+    font-family: var(--f1);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--c2);
+    letter-spacing: 6px;
+    font-style: italic;
+}
+@media screen and (max-width: calc(393px + 40px)) {
+    #window {
+        width: 100%;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+}
+@media screen and (max-height: calc(852px + 40px)) {
+    #window {
+        height: 100%;
+        border-top: 0;
+        border-bottom: 0;
+        border-radius: 0;
+    }
+}
+@media (max-width: 393px) or (max-height: 852px) {
+    #window {
+        display: none;
+    }
+    #blocked {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+}
