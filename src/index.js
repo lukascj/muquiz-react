@@ -19,9 +19,7 @@ const App = () => {
       <h1>The window is too small.</h1>
     </div>
   </>;
-};
-
-console.log(App);
+}
 
 const wrap = ReactDOM.createRoot(document.getElementById('wrap'));
 wrap.render(<App />);

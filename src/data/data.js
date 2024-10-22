@@ -1,4 +1,22 @@
 export const data = {
+    "notes": {
+        "white": [
+            { "name": ["C"] },
+            { "name": ["D"] },
+            { "name": ["E"] },
+            { "name": ["F"] },
+            { "name": ["G"] },
+            { "name": ["A"] },
+            { "name": ["B"] }
+        ],
+        "black": [
+            { "name": ["C#", "D♭"] },
+            { "name": ["D#", "E♭"] },
+            { "name": ["F#", "G♭"] },
+            { "name": ["G#", "A♭"] },
+            { "name": ["A#", "B♭"] }
+        ]
+    },
     "clefs": [
         { "name": "treble", "symbol": "𝄞" },
         { "name": "bass", "symbol": "𝄢" },
