@@ -48,6 +48,9 @@ body {
         align-items: center;
     }
 }
+a {
+    text-decoration: none;
+}
 #window {
     width: var(--w);
     height: var(--h);

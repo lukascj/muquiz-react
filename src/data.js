@@ -34,12 +34,12 @@ export const data = {
         { "name": "7/8", "type": "odd meter", "description": "Seven eighth notes per measure" }
     ],
     "note_lengths": [
-        { "name": "whole note", "symbol": "𝄽", "beats": 4 },
-        { "name": "half note", "symbol": "𝄼", "beats": 2 },
-        { "name": "quarter note", "symbol": "𝄻", "beats": 1 },
-        { "name": "eighth note", "symbol": "𝄼𝄸", "beats": 0.5 },
-        { "name": "sixteenth note", "symbol": "𝄼𝄸𝄸", "beats": 0.25 },
-        { "name": "thirty-second note", "symbol": "𝄼𝄸𝄸𝄸", "beats": 0.125 }
+        { "name": "whole", "rest-symbol": "𝄻", "note-symbol": "𝅝"},
+        { "name": "half", "rest-symbol": "𝄼", "note-symbol": "𝅗𝅥"},
+        { "name": "quarter", "rest-symbol": "𝄽", "note-symbol": "𝅘𝅥"},
+        { "name": "eighth", "rest-symbol": "𝄾", "note-symbol": "𝅘𝅥𝅮"},
+        { "name": "sixteenth", "rest-symbol": "𝄿", "note-symbol": "𝅘𝅥𝅯"},
+        { "name": "thirty-second"}
     ],
     "chords": [
         { "name": "C", "notes": ["C", "E", "G"] },

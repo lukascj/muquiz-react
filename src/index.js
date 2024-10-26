@@ -23,4 +23,3 @@ const App = () => {
 
 const wrap = ReactDOM.createRoot(document.getElementById('wrap'));
 wrap.render(<App />);
-// ReactDOM.render(<App />, document.getElementById('wrap'));

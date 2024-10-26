@@ -34,10 +34,10 @@
         font-weight: 600;
         letter-spacing: 2px;
         cursor: pointer;
-    }
-    .btn:active { /* Vid klick */
-        background-color: var(--c1);
-        color: var(--c2-dark);
-        border-color: var(--c2-dark);
+        &:active { /* Vid klick */
+            background-color: var(--c1);
+            color: var(--c2-dark);
+            border-color: var(--c2-dark);
+        }
     }
 }

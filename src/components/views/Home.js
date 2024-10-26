@@ -9,10 +9,10 @@ export default function Home() {
         <h3>~ Piano ~</h3>
       </div>
       <div className="bottom">
-          <button className="btn">Everything</button>
-          <button className="btn">Notes</button>
-          <button className="btn">Chords</button>
-          <button className="btn">Scales</button>
+          <a className="btn" href="/quiz?v=all">Everything</a>
+          <a className="btn" href="/quiz?v=notes">Notes</a>
+          <a className="btn" href="/quiz?v=chords">Chords</a>
+          <a className="btn" href="/quiz?v=scales">Scales</a>
       </div>
     </div>
   </>;
