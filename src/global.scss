@@ -57,6 +57,7 @@ a {
     border: 1px solid var(--c2);
     border-radius: 10px;
     background-color: var(--c1);
+    overflow: hidden;
 }
 #blocked {
     display: none;

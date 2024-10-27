@@ -4,19 +4,19 @@ import PianoKeys from '../PianoKeys';
 import { data as musicData }  from '../../data';
 import { shuffle } from '../../utility';
 
+const params = new URLSearchParams(window.location.search);
+
+let quiz, quizSource, btns;
+if(params.get('v') == 'notes') {
+  
+} else if(params.get('v') == 'notes2') {
+  quizSource = musicData['notes']['white'].concat(musicData['notes']['black']);
+  quiz = shuffle(quizSource);
+  btns = shuffle(quiz);
+}
+
 export default function Quiz() {
 
-  const params = new URLSearchParams(window.location.search);
-
-  let quiz, quizSource, buttons;
-  if(params.get('v') == 'notes') {
-    
-  } else if(params.get('v') == 'notes2') {
-    quizSource = musicData['notes']['white'].concat(musicData['notes']['black']);
-    quiz = shuffle(quizSource);
-    buttons = shuffle(quiz);
-  }
-  console.log(quiz)
   const quizLength = quiz.length;
   const [questionNum, setQuestion] = useState(1);
   const answer = quiz[questionNum-1]['name'][0];
@@ -39,6 +39,8 @@ export default function Quiz() {
     }
     if(questionNum < quizLength) {
       nextQuestion();
+    } else {
+      localStorage.setItem('highScore', score);
     }
   }
 
@@ -50,10 +52,12 @@ export default function Quiz() {
           <div>Score: {score}</div>
           <div>High-score: {highScore}</div>
         </header>
-        <PianoKeys octaves={[4]} markedKeys={[answer]}/>
+        <div className="main">
+          <PianoKeys octaves={[4]} markedKeys={[answer]}/>
+        </div>
       </div>
       <div className="bottom">
-        {buttons.map((note, index) => {
+        {btns.map((note, index) => {
           return <button className="btn" onClick={chooseAnswer} key={index}>{note['name'][0]}</button>
         })}
       </div>
