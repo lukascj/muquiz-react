@@ -45,6 +45,20 @@
         align-items: center;
         box-sizing: border-box;
     }
+    &.finished {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--c2);
+        > .result {
+            translate: 0 -70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
     .btn {
         height: 100%;
         width: 100%;
