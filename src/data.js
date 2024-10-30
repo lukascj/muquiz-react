@@ -1,20 +1,34 @@
 export const data = {
     "notes": {
         "white": [
-            { "name": ["C"] },
-            { "name": ["D"] },
-            { "name": ["E"] },
-            { "name": ["F"] },
-            { "name": ["G"] },
-            { "name": ["A"] },
-            { "name": ["B"] }
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "A",
+            "B"
         ],
         "black": [
-            { "name": ["C#", "D♭"] },
-            { "name": ["D#", "E♭"] },
-            { "name": ["F#", "G♭"] },
-            { "name": ["G#", "A♭"] },
-            { "name": ["A#", "B♭"] }
+            "C#/D♭",
+            "D#/E♭",
+            "F#/G♭",
+            "G#/A♭",
+            "A#/B♭"
+        ],
+        "black_sharp": [
+            "C#",
+            "D#",
+            "F#",
+            "G#",
+            "A#"
+        ],
+        "black_flat": [
+            "D♭",
+            "E♭",
+            "G♭",
+            "A♭",
+            "B♭"
         ]
     },
     "clefs": [
@@ -41,60 +55,112 @@ export const data = {
         { "name": "sixteenth", "rest-symbol": "𝄿", "note-symbol": "𝅘𝅥𝅯"},
         { "name": "thirty-second"}
     ],
-    "chords": [
-        { "name": "C", "notes": ["C", "E", "G"] },
-        { "name": "Cmaj7", "notes": ["C", "E", "G", "B"] },
-        { "name": "C7", "notes": ["C", "E", "G", "B♭"] },
-        { "name": "C#maj7", "notes": ["C#", "E#", "G#", "B#"] },
-        { "name": "D", "notes": ["D", "F#", "A"] },
-        { "name": "Dmaj7", "notes": ["D", "F#", "A", "C#"] },
-        { "name": "D7", "notes": ["D", "F#", "A", "C"] },
-        { "name": "E", "notes": ["E", "G#", "B"] },
-        { "name": "Emaj7", "notes": ["E", "G#", "B", "D#"] },
-        { "name": "E7", "notes": ["E", "G#", "B", "D"] },
-        { "name": "F", "notes": ["F", "A", "C"] },
-        { "name": "Fmaj7", "notes": ["F", "A", "C", "E"] },
-        { "name": "F7", "notes": ["F", "A", "C", "E♭"] },
-        { "name": "G", "notes": ["G", "B", "D"] },
-        { "name": "Gmaj7", "notes": ["G", "B", "D", "F#"] },
-        { "name": "G7", "notes": ["G", "B", "D", "F"] },
-        { "name": "A", "notes": ["A", "C#", "E"] },
-        { "name": "Amaj7", "notes": ["A", "C#", "E", "G#"] },
-        { "name": "A7", "notes": ["A", "C#", "E", "G"] },
-        { "name": "B", "notes": ["B", "D#", "F#"] },
-        { "name": "Bmaj7", "notes": ["B", "D#", "F#", "A#"] },
-        { "name": "B7", "notes": ["B", "D#", "F#", "A"] },
-        { "name": "Cmin", "notes": ["C", "E♭", "G"] },
-        { "name": "Cmin7", "notes": ["C", "E♭", "G", "B♭"] },
-        { "name": "C#min", "notes": ["C#", "E", "G#"] },
-        { "name": "C#min7", "notes": ["C#", "E", "G#", "B"] },
-        { "name": "Dmin", "notes": ["D", "F", "A"] },
-        { "name": "Dmin7", "notes": ["D", "F", "A", "C"] },
-        { "name": "Emin", "notes": ["E", "G", "B"] },
-        { "name": "Emin7", "notes": ["E", "G", "B", "D"] },
-        { "name": "Fmin", "notes": ["F", "A♭", "C"] },
-        { "name": "Fmin7", "notes": ["F", "A♭", "C", "E♭"] },
-        { "name": "Gmin", "notes": ["G", "B♭", "D"] },
-        { "name": "Gmin7", "notes": ["G", "B♭", "D", "F"] },
-        { "name": "Amin", "notes": ["A", "C", "E"] },
-        { "name": "Amin7", "notes": ["A", "C", "E", "G"] },
-        { "name": "Bmin", "notes": ["B", "D", "F#"] },
-        { "name": "Bmin7", "notes": ["B", "D", "F#", "A"] },
-        { "name": "C7sus4", "notes": ["C", "F", "G"] },
-        { "name": "Cmin7b5", "notes": ["C", "E♭", "F#", "B♭"] },
-        { "name": "C#min7b5", "notes": ["C#", "E", "G", "B"] },
-        { "name": "Dmin7b5", "notes": ["D", "F", "G", "C"] },
-        { "name": "Emin7b5", "notes": ["E", "G", "A", "C"] },
-        { "name": "Fmin7b5", "notes": ["F", "A♭", "B", "E♭"] },
-        { "name": "Gmin7b5", "notes": ["G", "B♭", "B", "D♭"] },
-        { "name": "Amin7b5", "notes": ["A", "C", "D", "F"] },
-        { "name": "Bmin7b5", "notes": ["B", "D", "E", "G"] },
-        { "name": "C9", "notes": ["C", "E", "G", "B♭", "D"] },
-        { "name": "C#9", "notes": ["C#", "E#", "G#", "B", "D#"] },
-        { "name": "D9", "notes": ["D", "F#", "A", "C", "E"] },
-        { "name": "Cmaj9", "notes": ["C", "E", "G", "B", "D"] },
-        { "name": "C#maj9", "notes": ["C#", "E#", "G#", "B#", "D#"] }
-    ],
+    "chords": {
+        "major": [
+            { "name": "C", "notes": ["C", "E", "G"] },
+            { "name": "D", "notes": ["D", "F#", "A"] },
+            { "name": "E", "notes": ["E", "G#", "B"] },
+            { "name": "F", "notes": ["F", "A", "C"] },
+            { "name": "G", "notes": ["G", "B", "D"] },
+            { "name": "A", "notes": ["A", "C#", "E"] },
+            { "name": "B", "notes": ["B", "D#", "F#"] }
+        ],
+        "minor": [
+            { "name": "Cmin", "notes": ["C", "E♭", "G"] },
+            { "name": "C#min", "notes": ["C#", "E", "G#"] },
+            { "name": "Dmin", "notes": ["D", "F", "A"] },
+            { "name": "Emin", "notes": ["E", "G", "B"] },
+            { "name": "Fmin", "notes": ["F", "A♭", "C"] },
+            { "name": "Gmin", "notes": ["G", "B♭", "D"] },
+            { "name": "Amin", "notes": ["A", "C", "E"] },
+            { "name": "Bmin", "notes": ["B", "D", "F#"] }
+        ],
+        "dominant_7th": [
+            { "name": "C7", "notes": ["C", "E", "G", "B♭"] },
+            { "name": "D7", "notes": ["D", "F#", "A", "C"] },
+            { "name": "E7", "notes": ["E", "G#", "B", "D"] },
+            { "name": "F7", "notes": ["F", "A", "C", "E♭"] },
+            { "name": "G7", "notes": ["G", "B", "D", "F"] },
+            { "name": "A7", "notes": ["A", "C#", "E", "G"] },
+            { "name": "B7", "notes": ["B", "D#", "F#", "A"] }
+        ],
+        "dominant_7sus4": [
+            { "name": "C7sus4", "notes": ["C", "F", "G", "B♭"] },
+            { "name": "D7sus4", "notes": ["D", "G", "A", "C"] },
+            { "name": "E7sus4", "notes": ["E", "A", "B", "D"] },
+            { "name": "G7sus4", "notes": ["G", "C", "D", "F"] }
+        ],
+        "major_7th": [
+            { "name": "Cmaj7", "notes": ["C", "E", "G", "B"] },
+            { "name": "C#maj7", "notes": ["C#", "E#", "G#", "B#"] },
+            { "name": "Dmaj7", "notes": ["D", "F#", "A", "C#"] },
+            { "name": "Emaj7", "notes": ["E", "G#", "B", "D#"] },
+            { "name": "Fmaj7", "notes": ["F", "A", "C", "E"] },
+            { "name": "Gmaj7", "notes": ["G", "B", "D", "F#"] },
+            { "name": "Amaj7", "notes": ["A", "C#", "E", "G#"] },
+            { "name": "Bmaj7", "notes": ["B", "D#", "F#", "A#"] }
+        ],
+        "minor_7th": [
+            { "name": "Cmin7", "notes": ["C", "E♭", "G", "B♭"] },
+            { "name": "C#min7", "notes": ["C#", "E", "G#", "B"] },
+            { "name": "Dmin7", "notes": ["D", "F", "A", "C"] },
+            { "name": "Emin7", "notes": ["E", "G", "B", "D"] },
+            { "name": "Fmin7", "notes": ["F", "A♭", "C", "E♭"] },
+            { "name": "Gmin7", "notes": ["G", "B♭", "D", "F"] },
+            { "name": "Amin7", "notes": ["A", "C", "E", "G"] },
+            { "name": "Bmin7", "notes": ["B", "D", "F#", "A"] }
+        ],
+        "minor_7♭5": [
+            { "name": "Cmin7♭5", "notes": ["C", "E♭", "F#", "B♭"] },
+            { "name": "C#min7♭5", "notes": ["C#", "E", "G", "B"] },
+            { "name": "Dmin7♭5", "notes": ["D", "F", "G", "C"] },
+            { "name": "Emin7♭5", "notes": ["E", "G", "A", "C"] },
+            { "name": "Fmin7♭5", "notes": ["F", "A♭", "B", "E♭"] },
+            { "name": "Gmin7♭5", "notes": ["G", "B♭", "B", "D♭"] },
+            { "name": "Amin7♭5", "notes": ["A", "C", "D", "F"] },
+            { "name": "Bmin7♭5", "notes": ["B", "D", "E", "G"] }
+        ],
+        "major_7♭5": [
+            { "name": "Cmaj7♭5", "notes": ["C", "E", "G♭", "B"] },
+            { "name": "C#maj7♭5", "notes": ["C#", "E#", "G", "B#"] },
+            { "name": "Dmaj7♭5", "notes": ["D", "F#", "A♭", "C#"] },
+            { "name": "Emaj7♭5", "notes": ["E", "G#", "B♭", "D#"] },
+            { "name": "Fmaj7♭5", "notes": ["F", "A", "C♭", "E"] },
+            { "name": "Gmaj7♭5", "notes": ["G", "B", "D♭", "F#"] },
+            { "name": "Amaj7♭5", "notes": ["A", "C#", "E♭", "G#"] },
+            { "name": "Bmaj7♭5", "notes": ["B", "D#", "F", "A#"] }
+        ],
+        "9th": [
+            { "name": "C9", "notes": ["C", "E", "G", "B♭", "D"] },
+            { "name": "C#9", "notes": ["C#", "E#", "G#", "B", "D#"] },
+            { "name": "D9", "notes": ["D", "F#", "A", "C", "E"] },
+            { "name": "E9", "notes": ["E", "G#", "B", "D", "F#"] },
+            { "name": "F9", "notes": ["F", "A", "C", "E♭", "G"] },
+            { "name": "G9", "notes": ["G", "B", "D", "F", "A"] },
+            { "name": "A9", "notes": ["A", "C#", "E", "G", "B"] },
+            { "name": "B9", "notes": ["B", "D#", "F#", "A", "C#"] }
+        ],
+        "major_9th": [
+            { "name": "Cmaj9", "notes": ["C", "E", "G", "B", "D"] },
+            { "name": "C#maj9", "notes": ["C#", "E#", "G#", "B#", "D#"] },
+            { "name": "Dmaj9", "notes": ["D", "F#", "A", "C#", "E"] },
+            { "name": "Emaj9", "notes": ["E", "G#", "B", "D#", "F#"] },
+            { "name": "Fmaj9", "notes": ["F", "A", "C", "E", "G"] },
+            { "name": "Gmaj9", "notes": ["G", "B", "D", "F#", "A"] },
+            { "name": "Amaj9", "notes": ["A", "C#", "E", "G#", "B"] },
+            { "name": "Bmaj9", "notes": ["B", "D#", "F#", "A#", "C#"] }
+        ], 
+        "minor_9th": [
+            { "name": "Cmin9", "notes": ["C", "E♭", "G", "B♭", "D"] },
+            { "name": "C#min9", "notes": ["C#", "E", "G#", "B", "D#"] },
+            { "name": "Dmin9", "notes": ["D", "F", "A", "C", "E"] },
+            { "name": "Emin9", "notes": ["E", "G", "B", "D", "F#"] },
+            { "name": "Fmin9", "notes": ["F", "A♭", "C", "E♭", "G"] },
+            { "name": "Gmin9", "notes": ["G", "B♭", "D", "F", "A"] },
+            { "name": "Amin9", "notes": ["A", "C", "E", "G", "B"] },
+            { "name": "Bmin9", "notes": ["B", "D", "F#", "A", "C#"] }
+        ]
+    },
     "scales": {
         "major": [
             {

@@ -5,3 +5,11 @@ export function shuffle(arr) {
     } 
     return arr; 
 }; 
+
+export function findIndexes(match, arr) {
+    let indexes = [];
+    arr.forEach((str,i) => {
+        if(str == match) indexes.push(i);
+    });
+    return indexes;
+}
