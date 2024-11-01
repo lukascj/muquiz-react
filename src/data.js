@@ -29,6 +29,107 @@ export const data = {
             "G♭",
             "A♭",
             "B♭"
+        ],
+        "values": [
+            // Highest val allowed: 6
+            // Lowest: -2
+            // Bottom line equals 0
+            // 3.5 difference between occurences of same note
+            {
+                "name": "C",
+                "vals": {
+                    "treble": {
+                        "o4": -1, // Octave 4
+                        "o5": 2.5, 
+                        "o6": 6
+                    },
+                    "bass": {
+                        "o4": -2, 
+                        "o5": 1.5, 
+                        "o6": 5
+                    }
+                }
+            },
+            {
+                "name": "D",
+                "vals": {
+                    "treble": {
+                        "o4": -0.5, 
+                        "o5": 3
+                    },
+                    "bass": {
+                        "o4": -1.5,
+                        "o5": 2,
+                        "o6": 5.5
+                    }
+                }
+            },
+            {
+                "name": "E",
+                "vals": {
+                    "treble": {
+                        "o4": 0,
+                        "o5": 3.5
+                    },
+                    "bass": {
+                        "o4": -1,
+                        "o5": 2.5,
+                        "o6": 6
+                    }
+                }
+            },
+            {
+                "name": "F",
+                "vals": {
+                    "treble": {
+                        "o4": 0.5,
+                        "o5": 4
+                    },
+                    "bass": {
+                        "o4": -0.5,
+                        "o5": 3
+                    }
+                }
+            },
+            {
+                "name": "G",
+                "vals": {
+                    "treble": {
+                        "o4": 1,
+                        "o5": 4.5
+                    },
+                    "bass": {
+                        "o4": 0,
+                        "o5": 3.5
+                    }
+                }
+            },
+            {
+                "name": "A",
+                "vals": {
+                    "treble": {
+                        "o4": 1.5,
+                        "o5": 5
+                    },
+                    "bass": {
+                        "o4": 0.5,
+                        "o5": 4
+                    }
+                }
+            },
+            {
+                "name": "B",
+                "vals": {
+                    "treble": {
+                        "o4": 2,
+                        "o5": 5.5
+                    },
+                    "bass": {
+                        "o4": 1,
+                        "o5": 4.5
+                    }
+                }
+            }
         ]
     },
     "clefs": [
@@ -48,12 +149,11 @@ export const data = {
         { "name": "7/8", "type": "odd meter", "description": "Seven eighth notes per measure" }
     ],
     "note_lengths": [
-        { "name": "whole", "rest-symbol": "𝄻", "note-symbol": "𝅝"},
-        { "name": "half", "rest-symbol": "𝄼", "note-symbol": "𝅗𝅥"},
-        { "name": "quarter", "rest-symbol": "𝄽", "note-symbol": "𝅘𝅥"},
-        { "name": "eighth", "rest-symbol": "𝄾", "note-symbol": "𝅘𝅥𝅮"},
-        { "name": "sixteenth", "rest-symbol": "𝄿", "note-symbol": "𝅘𝅥𝅯"},
-        { "name": "thirty-second"}
+        { "name": "1", "rest-symbol": "𝄻", "note-symbol": "𝅝"}, // whole
+        { "name": "1/2", "rest-symbol": "𝄼", "note-symbol": "𝅗𝅥"}, // half
+        { "name": "1/4", "rest-symbol": "𝄽", "note-symbol": "𝅘𝅥"}, // quarter
+        { "name": "1/8", "rest-symbol": "𝄾", "note-symbol": "𝅘𝅥𝅮"}, // eighth
+        { "name": "1/16", "rest-symbol": "𝄿", "note-symbol": "𝅘𝅥𝅯"}, // sixteenth
     ],
     "chords": {
         "major": [
