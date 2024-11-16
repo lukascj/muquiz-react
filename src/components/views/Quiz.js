@@ -33,11 +33,15 @@ class QuizObj {
   presetNotes(musicData) {
     let questions = [];
     let answers = [];
+    // Spara alla noter till samma array
     const notes = musicData['notes']['white']
       .concat(musicData['notes']['black_sharp']);
+    // Blanda noter och lägg in dem i listan på svar 
+    // Ett answer-objekt är strukturerad samma oavsett preset; "notes: [note]" är ju egentligen onödigt
     shuffle(notes).forEach(note => {
       answers.push({name: note, notes: [note]});
     });
+    // Blanda noter och lägg dem i listan på frågor.
     shuffle(notes).forEach(note => { 
       const answersCompressed = answers.map(a => a['name']);
       questions.push({
@@ -55,7 +59,7 @@ class QuizObj {
     let answers = [];
     let chords = [];
     for(const type in musicData['chords']) {
-      chords.push(musicData['chords'][type]);
+      chords.concat(musicData['chords'][type]);
     }
     shuffle(chords).forEach(chord => {
       const name = chord['name'].join(' ');
@@ -129,25 +133,28 @@ class QuizObj {
 
 const params = new URLSearchParams(window.location.search);
 
-// Skapa quiz-objekt från musik-data
+// Kolla preset och skapa quiz-objekt från musik-data
+// Behöver skapas utanför funktionen så att svar och frågor inte blandas om varje gång state uppdateras
+let preset = params.get('p');
 if(!presets.includes(params.get('p'))) {
-  throw new Error("Faulty preset.");
-}
-const quiz = new QuizObj(params.get('p'));
+  if(preset != "") console.log("Fixed preset, given faulty.");
+  preset = "all"; // default
+} 
+const quiz = new QuizObj(preset);
 const quizLen = quiz.questions.length;
-
-// Hämta high-score (om det finns)
-const highScore = localStorage.getItem('high_score') || 0;
 
 export default function Quiz() {
 
-  // Handle quiz ending
+  // Hämta high-score (om det finns)
+  const highScore = localStorage.getItem('high_score') || 0;
+
+  // Hantera quiz avslut
   const [running, stop] = useState(true);
   function endQuiz() {
     stop(false);
   };
 
-  // Handle quiz progression
+  // Hantera quiz progression
   const [questionNum, setQuestion] = useState(1);
   function nextQuestion() {
     setQuestion(questionNum+1);
@@ -161,7 +168,7 @@ export default function Quiz() {
   });
   let correctAnswerNames = correctAnswers.map(answer => answer['name']);
 
-  // Handle score and high-score
+  // Hantera score & high-score
   let [newHigh, setHigh] = useState(false);
   function updateHigh(s) {
     localStorage.setItem('high_score', s);
@@ -172,7 +179,7 @@ export default function Quiz() {
     setScore(score+1);
   };
 
-  // Also quiz progression
+  // Ytterligare quiz progression
   const chooseAnswer = (event) => {
     const guess = event.target.textContent;
     if(correctAnswerNames.includes(guess)) {
@@ -185,17 +192,23 @@ export default function Quiz() {
       endQuiz();
     }
   }
+  
   // Skapa html för questions
-  if(!questionFormats.includes(params.get('q'))) {
-    throw new Error("Faulty question-format.");
+  let format;
+  format = params.get('q');
+  if(!questionFormats.includes(format)) {
+    if(format != "") console.log("Fixed question-format, given faulty.");
+    format = answerFormats[2]; // default / keys
   }
-  let questionsContent = drawQuestions(params.get('q'));
-
+  let questionsContent = drawQuestions(format);
+  
   // Skapa html för answers
-  if(!answerFormats.includes(params.get('a'))) {
-    throw new Error("Faulty answer-format.");
+  format = params.get('a');
+  if(!answerFormats.includes(format)) {
+    if(format != "") console.log("Fixed answer-format, given faulty.");
+    format = answerFormats[0]; // default / names
   }
-  let answersContent = drawAnswers(params.get('a'));
+  let answersContent = drawAnswers(format);
 
   // Funktioner för att skapa html för questions och answers
   function drawQuestions(format) {
